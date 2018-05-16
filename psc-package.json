@@ -1,0 +1,10 @@
+{
+  "name": "express-query-parser",
+  "set": "psc-0.11.7",
+  "source": "https://github.com/purescript/package-sets.git",
+  "depends": [
+    "console",
+    "eff",
+    "prelude"
+  ]
+}

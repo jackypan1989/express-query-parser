@@ -1,0 +1,11 @@
+{
+  "name": "express-query-parser",
+  "version": "0.1.0",
+  "description": "query parser for express.js",
+  "main": "index.js",
+  "author": "jackypan1989",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
