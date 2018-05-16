@@ -1,11 +1,17 @@
 {
   "name": "express-query-parser",
-  "version": "0.1.0",
-  "description": "query parser for express.js",
+  "version": "1.0.0",
   "main": "index.js",
-  "author": "jackypan1989",
+  "author": "jackypan1989 <jackypan1989@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production parcel build src/index.js"
+  },
   "devDependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jest": "^22.4.3",
+    "parcel-bundler": "^1.8.1",
+    "ramda": "^0.25.0",
+    "supertest": "^3.1.0"
   }
 }
