@@ -16,14 +16,6 @@ const parse = (obj, options) =>
         ]),
         R.always(null)
       ],
-      // 'undefined' => undefined
-      [
-        R.allPass([
-          _ => R.pathEq(['parseUndefined'], true, options),
-          _ => R.equals('undefined', val)
-        ]),
-        R.always(undefined)
-      ],
       // 'true' => true, 'false' => false
       [
         R.allPass([
@@ -35,6 +27,7 @@ const parse = (obj, options) =>
           [_ => R.equals('false', val), R.always(false)]
         ])
       ],
+      // else => return self
       [R.T, R.identity]
     ])(val)
   )(obj)
@@ -46,17 +39,3 @@ const queryParser = (options) => (req, res, next) => {
 
 module.exports = queryParser
 module.exports.parse = parse
-
-console.log(parse({
-  a: 'null',
-  b: 'undefined',
-  c: 'true',
-  d: {
-    e: 'null',
-    f: 'true'
-  }
-}, {
-  parseNull: true,
-  parseUndefined: true,
-  parseBoolean: true
-}))
