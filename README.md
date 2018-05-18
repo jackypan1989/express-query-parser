@@ -1,3 +1,6 @@
+![](https://img.shields.io/npm/v/express-query-parser.svg)
+![](https://img.shields.io/npm/dt/express-query-parser.svg)
+![](https://img.shields.io/github/license/jackypan1989/express-query-parser.svg)
 # Express-query-parser
 In your express server, your may encounter req.query parse problem.   
 Normally you may call http://localhost/?a=null&b=true&c[d]=false.   
