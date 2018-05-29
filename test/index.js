@@ -1,4 +1,4 @@
-const parse = require('./../src/index').parse
+const parse = require('./../dist/index').parse
 
 console.log(parse({
   a: 'null',

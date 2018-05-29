@@ -1,4 +1,4 @@
-const queryParser = require('./../src/index')
+const queryParser = require('./../dist/index')
 const express = require('express')
 const app = express()
 

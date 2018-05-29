@@ -1,7 +1,7 @@
-const R = require('ramda')
+import R from 'ramda'
 
 const parse = (obj, options) => 
-  R.mapObjIndexed(val =>
+  R.mapObjIndexed((val, key) =>
     R.cond([
       // Object, call recusive
       [

@@ -10,7 +10,8 @@ This project will help you parse to correct value.
 ```req.query = {a: null, b: true, c: {d: false}}```
 
 ## changelog
-2018-05-17 (1.0.0): publish init version
+2018-05-17 (1.0.0): publish init version  
+2018-05-29 (1.0.1): reduce size (177KB -> 17KB)
 
 ## feature
 - [x] parse your query for null / boolean
