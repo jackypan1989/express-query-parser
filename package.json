@@ -1,6 +1,6 @@
 {
   "name": "express-query-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "author": "jackypan1989 <jackypan1989@gmail.com>",
   "license": "MIT",
