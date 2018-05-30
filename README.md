@@ -2,22 +2,27 @@
 [![](https://img.shields.io/npm/dt/express-query-parser.svg)](https://www.npmjs.com/package/express-query-parser)
 ![](https://img.shields.io/github/license/jackypan1989/express-query-parser.svg)
 # Express-query-parser
-In your express server, your may encounter req.query parse problem.  
+In your express server, your may encounter some req.query parse problems.  
+This project will help you parse value like 'null', 'true', ... etc.
 
 1. nest query
 ```
 GET http://localhost/?a=null&b=true&c[d]=false
+
 // without parser
 req.query = {a: 'null', b: 'true', c: {d: 'false'}}```
+
 // with parser
-req.query = {a: 'null', b: 'true', c: {d: 'false'}}
+req.query = {a: null, b: true, c: {d: false}}
 ```
 
 2. array query
 ```
 GET http://localhost/?a[]=null&a[]=false
+
 // without parser
 req.query = {a: ['null', 'false']}
+
 // with parser
 req.query = {a: [null, false]}
 ```
