@@ -1,4 +1,5 @@
-const { queryParser } = require('express-query-parser')
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { queryParser } = require('../dist/index')
 const express = require('express')
 const app = express()
 
