@@ -30,7 +30,7 @@ req.query = {a: [null, false]}
 ```
 
 ## changelog
-2021-10-12 (1.3.0): bump version, add number convert
+2021-10-12 (1.3.0): bump version, add number convert  
 2021-04-01 (1.2.0): bump version, only use esbuild and add type declarion   
 2020-10-26 (1.1.0): rewrite to typescript and rollup  
 2018-05-31 (1.0.2): support array  
