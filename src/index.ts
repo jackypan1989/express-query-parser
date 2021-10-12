@@ -6,6 +6,7 @@ type ParsedQuery = any
 interface Options {
   parseNull?: boolean
   parseBoolean?: boolean
+  parseNumber?: boolean
 }
 
 export const parse = (target: ParsedQuery, options: Options) : ParsedQuery => {
@@ -15,6 +16,8 @@ export const parse = (target: ParsedQuery, options: Options) : ParsedQuery => {
         return null
       } else if (options.parseBoolean && (target === 'true' || target === 'false')) {
         return target === 'true'
+      } else if (options.parseNumber && !isNaN(Number(target))) {
+        return Number(target)
       } else {
         return target
       }
