@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 declare type ParsedQuery = any;
 interface Options {
     parseNull?: boolean;
+    parseUndefined?: boolean;
     parseBoolean?: boolean;
     parseNumber?: boolean;
 }
