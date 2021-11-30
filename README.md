@@ -30,15 +30,16 @@ req.query = {a: [null, false]}
 ```
 
 ## changelog
+2021-11-30 (1.3.2): add undefined convert  
 2021-10-12 (1.3.0): bump version, add number convert  
-2021-04-01 (1.2.0): bump version, only use esbuild and add type declarion   
+2021-04-01 (1.2.0): bump version, only use esbuild and add type declarion  
 2020-10-26 (1.1.0): rewrite to typescript and rollup  
 2018-05-31 (1.0.2): support array  
 2018-05-29 (1.0.1): reduce size (177KB -> 17KB)    
 2018-05-17 (1.0.0): publish init version  
 
 ## feature
-- [x] parse your query for null / boolean
+- [x] parse your query for null / boolean / undefined
 - [x] support nested query
 - [x] support array
 - [x] support numbered string convert 
@@ -61,6 +62,7 @@ const app = express()
 app.use(
   queryParser({
     parseNull: true,
+    parseUndefined: true,
     parseBoolean: true,
     parseNumber: true
   })
@@ -72,6 +74,7 @@ app.use(
 | field | desc | type | default |
 |---|---|---|---|
 | parseNull  | convert all ```"null"``` to ```null``` | ```boolean```  | ```true``` |
+| parseUndefined  | convert all ```"undefined"``` to ```undefined``` | ```boolean```  | ```true``` |
 | parseBoolean  | convert all ```"true"``` to ```true``` and ```"false"``` to ```false``` | ```boolean```  | ```true``` |
 | parseNumber  | convert all numbered string to int and float | ```boolean```  | ```true``` |
 
