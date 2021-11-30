@@ -5,6 +5,7 @@ type ParsedQuery = any
 
 interface Options {
   parseNull?: boolean
+  parseUndefined?: boolean
   parseBoolean?: boolean
   parseNumber?: boolean
 }
@@ -14,6 +15,8 @@ export const parse = (target: ParsedQuery, options: Options) : ParsedQuery => {
     case 'string':
       if (options.parseNull && target === 'null') {
         return null
+      } else if (options.parseUndefined && target === 'undefined') {
+        return undefined
       } else if (options.parseBoolean && (target === 'true' || target === 'false')) {
         return target === 'true'
       } else if (options.parseNumber && !isNaN(Number(target))) {
