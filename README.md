@@ -30,6 +30,7 @@ req.query = {a: [null, false]}
 ```
 
 ## changelog
+2022-05-31 (1.3.3): add empty string convert  
 2021-11-30 (1.3.2): add undefined convert  
 2021-10-12 (1.3.0): bump version, add number convert  
 2021-04-01 (1.2.0): bump version, only use esbuild and add type declarion  
