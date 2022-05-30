@@ -13,7 +13,9 @@ interface Options {
 export const parse = (target: ParsedQuery, options: Options) : ParsedQuery => {
   switch (typeof (target)) {
     case 'string':
-      if (options.parseNull && target === 'null') {
+      if (target === '') {
+        return ''
+      } else if (options.parseNull && target === 'null') {
         return null
       } else if (options.parseUndefined && target === 'undefined') {
         return undefined
