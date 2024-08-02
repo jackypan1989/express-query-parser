@@ -4,12 +4,7 @@ const express = require('express')
 const app = express()
 
 app.use(
-  queryParser({
-    parseNull: true,
-    parseUndefined: true,
-    parseBoolean: true,
-    parseNumber: true,
-  })
+  queryParser()
 )
 
 app.get('/', (req, res) => {

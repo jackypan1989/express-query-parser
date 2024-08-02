@@ -10,6 +10,25 @@ interface Options {
   parseNumber?: boolean
 }
 
+const defaultOptions: Required<Options> = {
+  parseNull: true,
+  parseUndefined: true,
+  parseBoolean: true,
+  parseNumber: true,
+}
+
+function mergeOptions(options: Options): Options {
+  const mergedOptions: Options = defaultOptions
+
+  for (const key in options) {
+    const option = options[key]
+    if (option !== undefined)
+      mergedOptions[key] == option
+  }
+
+  return mergedOptions
+}
+
 export const parse = (target: ParsedQuery, options: Options) : ParsedQuery => {
   switch (typeof (target)) {
     case 'string':
@@ -42,7 +61,7 @@ export const parse = (target: ParsedQuery, options: Options) : ParsedQuery => {
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const queryParser = (options: Options) => (req: Request, res: Response, next: NextFunction) => {
-  req.query = parse(req.query, options)
+export const queryParser = (options?: Options) => (req: Request, res: Response, next: NextFunction) => {
+  req.query = parse(req.query, mergeOptions(options || {}))
   next()
 }
